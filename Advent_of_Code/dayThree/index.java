@@ -20,7 +20,8 @@ public class index {
         int total = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'm' && str.charAt(i + 1) == 'u' && str.charAt(i + 2) == 'l') {
-                Matcher matcher = pattern.matcher(str.substring(i + 3, i + 12));
+                int endIndex = Math.min(i + 12, str.length());
+                Matcher matcher = pattern.matcher(str.substring(i + 3, endIndex));
                 if (matcher.find()) {
                     String found = (matcher.group().replace("(", "").replace(")", ""));
                     String[] result = found.split(",");
