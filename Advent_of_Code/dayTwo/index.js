@@ -23,7 +23,7 @@ document.getElementById('csv').addEventListener('change', function (event) {
                 for (let i = 0; i < report.length; i++) {
                     if (!checkSafe(report[i])) {
                         for (let j = 0; j < report[i].length; j++) {
-                            // creating two new arrays, one unsing the numbers before j and one using the numbers after j and combining them to tempArray
+                            // creating two new arrays, one unsing the numbers before j and one using the numbers after j and combining them to tempArray using concat = ...
                             const tempArray = [...report[i].slice(0, j), ...report[i].slice(j + 1)];
                             const result = checkSafe(tempArray);
                             if (result) {

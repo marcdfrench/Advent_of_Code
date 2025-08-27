@@ -38,8 +38,9 @@ public class index {
             if (toggle == true) {
                 // Check for mul
                 if (str.startsWith("mul", i)) {
-                    // check if format after mul matches regex
+                    // for the last mul in the string
                     int endIndex = Math.min(str.length(), i + 12);
+                    // check if format after mul matches regex
                     Matcher matcher = pattern.matcher(str.substring(i + 3, endIndex));
                     if (matcher.find()) {
                         // Get the numbers from the regex match and remove the ()
